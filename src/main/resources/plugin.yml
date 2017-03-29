@@ -1,0 +1,11 @@
+name: ChatterBot
+version: 1.6.1
+main: me.angrypostman.chatterbot.ChatterBot
+description: A simple and friendly chat bot :)
+author: AngryPostman
+website: https://www.spigotmc.org/resources/chatterbot.30602/
+
+commands:
+    chatterbot:
+        description: "Base command for the chat bot."
+        aliases: [chatty, chat, chatterbot, cb, cbot, chatb]

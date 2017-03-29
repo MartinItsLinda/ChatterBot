@@ -1,0 +1,73 @@
+#Should bot sessions be per server instead of per user?
+#If this is true, the bot will reply in chat instead of to the player (except on error or changes to it).
+#If this is false, all sessions will be per player instead and the bot will reply directly to the player.
+#NOTE: The bot will still be accessible normally (/chatbot [question])
+#variables:
+# - true
+# - false
+is_global_bot: false
+
+#The command prefix players will use in chat when attempting to communicate with the bot
+#NOTE: This is not the actual command itself, just the prefix, like when you use / before commands in bukkit so it's identified
+#as a command and not a message (this cannot be a /).
+command_prefix: "-"
+
+#NOTE: The prefix (if there is one) is automatically appended before all messages
+messages:
+
+    #The prefix the bot will use when replying to players.
+    #chat color: yes
+    #variables: none
+    prefix: "&7ChatterBot >"
+
+    #Error messages
+    error:
+
+        #If a player doesn't have permission to perform this action/command
+        #chat color: yes
+        #variables: none
+        no_permission: "&cYou dont have permission to do that."
+
+        #The message sent to a player when they execute the command incorrectly.
+        #chat color: yes
+        #variables:
+        # $command - The command that was executed.
+        # $usage - The correct usage of the command that was executed.
+        correct_usage: "&cCorrect Usage: &7/$command $usage"
+
+    #Action messages (whenever a player performs an action on the bot)
+    action:
+
+        #Whenever the bot id is changed
+        set_id:
+
+            #If the bot's id was changed successfully,
+            success: "&aSet the bot's id to: $id ($name)."
+
+            #If the bot's id was unsuccessfully changed (invalid bot id)
+            #chat color: yes
+            #variables:
+            # $id - The id of the bot
+            failure: "&cInvalid bot id ($id)."
+
+        ##Messages sent whenever the bot replies (or indeed doesn't)
+        bot_reply:
+
+            #If the bot has a reply,
+            #chat color: yes
+            #variables:
+            # $reply - The reply from the bot
+            success: "&f$reply"
+
+            #If the bot doesn't have anything to say (an error occured)
+            #chat color: yes
+            #variables: none
+            failure: "&cI don't know what to say :c"
+
+        #Message sent when the config is reloaded
+        reload:
+
+            #Configuration was successfully reloaded
+            #chat color: yes
+            #variables: none
+            success: "&aConfiguration reloaded"
